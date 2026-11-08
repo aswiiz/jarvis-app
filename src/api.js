@@ -74,7 +74,7 @@ export class Client {
     this.active = this.bases[0] || null;
   }
 
-  get configured() { return this.bases.length > 0 && !!this.token; }
+  get configured() { return this.bases.length > 0; }
 
   // Order to try: active first, then the others.
   ordered() {
@@ -117,7 +117,8 @@ export class Client {
   }
 
   headers(json = true) {
-    const h = { 'X-API-Token': this.token };
+    const h = {};
+    if (this.token) h['X-API-Token'] = this.token;
     if (json) h['Content-Type'] = 'application/json';
     return h;
   }
