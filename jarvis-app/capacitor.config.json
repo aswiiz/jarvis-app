@@ -1,0 +1,9 @@
+{
+  "appId": "com.jarvis.app",
+  "appName": "JARVIS",
+  "webDir": "dist",
+  "android": { "allowMixedContent": false },
+  "plugins": {
+    "CapacitorHttp": { "enabled": true }
+  }
+}
