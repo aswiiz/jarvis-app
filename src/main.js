@@ -175,7 +175,7 @@ async function send() {
   const input = $('input');
   const text = input.value.trim();
   if (!text && !pending.length) return;
-  if (!client.configured) { openSettings(); return toast('Enter your backend URL and app token first.'); }
+  if (!client.configured) { openSettings(); return toast('Enter your backend URL first.'); }
 
   busy = true; $('btn-send').disabled = true;
   const files = pending.map(({ name, mime, data }) => ({ name, mime, data }));
